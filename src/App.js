@@ -1,17 +1,22 @@
 import React from "react";
-import PhotoList from "./components/PhotoList"
+import PhotoList from "./components/PhotoList";
+import styled from "styled-components";
 import "./App.css";
+
+const MainContainer = styled.div`
+
+    background: blue;
+`;
 
 function App() {
 
   return (
-    <div className="App">
+    <MainContainer className="App">
       <p>
-        Read through the instructions in the README.md file to build your NASA
-        app! Have fun!
+        Nasa Photo of the Day
       </p>
       <PhotoList />
-    </div>
+    </MainContainer>
   );
 }
 

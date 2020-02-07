@@ -1,28 +1,24 @@
 import React, { useState, useEffect } from "react";
 import axios from "axios";
+import styled from "styled-components";
 
+const HeaderTwo = styled.h3`
 
+  background-color: yellow;
+`;
 
-function PhotoList(props) {
+function PhotoList() {
   
   const [photoData, setPhotoData] = useState([])
-  // const [Pic, setPic] = useState("");
-  // const [pTag, setPTag] = useState("Blood")
-  // const [title, setTitle] = useState("Title");
-  // const [date, setdate] = useState("data");
-  // const [copyright, setcopyright] = useState("copyright");
 
   
   useEffect(() => {
     axios
       .get("https://api.nasa.gov/planetary/apod?api_key=DEMO_KEY")
       .then(res => {
-        // setPic(res.data.url)
-        // setPTag(res.data.explanation)
-        // setTitle(res.data.title)
-        // setdate(res.data.date)
-        // setcopyright(res.data.copyright)
+        console.log(res);
        setPhotoData(res.data);
+       
       })
       .catch(err => {
         console.log('Error', err)
@@ -30,10 +26,9 @@ function PhotoList(props) {
       
   }, []);
 
-
   return (
     <div className="App">
-      <h2>{photoData.title}</h2>
+      <HeaderTwo>{photoData.title}</HeaderTwo>
       <img src={photoData.url} alt="a random pic" />
       <p>{photoData.explanation}</p>
       <p>{photoData.date}</p>

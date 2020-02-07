@@ -12,9 +12,10 @@ function App() {
 
   return (
     <MainContainer className="App">
-      <p>
+      <input type='date'/>
+      <h1>
         Nasa Photo of the Day
-      </p>
+      </h1>
       <PhotoList />
     </MainContainer>
   );
